@@ -16,3 +16,8 @@ Then install your new ROM.
 And enjoy!
 
 ### This ROM is in develop progress
+
+------------------------
+Google is registered branch of Google, Inc.
+
+[1]: http://forum.xda-developers.com/showthread.php?t=1317394
