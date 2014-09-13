@@ -2,7 +2,7 @@
 This is custom ROM for Ancora (Samsung Galaxy W GT-i8150) based on AOSP with Google Launcher and all other apps from Google.
 
 ## Installation
-To install this ROM to your ancora device, you need to have device rooted (see the guide on [Xda](1)).
+To install this ROM to your ancora device, you need to have device rooted (see the guide on [Xda][xda]).
 
 Then download the zip file from one of tags on this repo and copy it to your phone (the best is sdcard).
 Then reboot your phone to the RECOVERY mode.
@@ -17,7 +17,6 @@ And enjoy!
 
 ### This ROM is in develop progress
 
-------------------------
-Google is registered branch of Google, Inc.
 
-[1]: http://forum.xda-developers.com/showthread.php?t=1317394
+
+[xda]: http://forum.xda-developers.com/showthread.php?t=1317394
