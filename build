@@ -1,0 +1,44 @@
+#! /bin/bash
+
+clear
+
+echo -e "\e[0;31;46m============================================== \n\
+\tGoogleDroid building script \n\
+=================================================\e[0m\n\n\
+This script will guide you through building process \n\
+of \e[1mGoogleDroid\e[0m for Samsung Galaxy W (GT-i8150) \n\
+and compile it for you.\n\n\
+Please, define a working directory by full path:"
+read wd_path
+echo -e "Ok, your build will be inside ${wd_path}.\n\n\
+We will now go inside this dir and download the sources.\n\
+It will take some time, so wait until the end."
+echo
+echo
+if [ -d $wd_path ]; then
+	cd $wd_path
+else
+	mkdir $wd_path
+	cd $wd_path
+fi
+wget https://storage.googleapis.com/git-repo-downloads/repo
+if [ -x ./repo ]; then
+	continue
+else
+	chmod a+x ./repo
+fi
+export PATH=$wd_path:$PATH
+if [ ! -x /usr/bin/git ]; then
+	echo -e "\e[1;31m[Error:] Missing git. Please, install git (http://git-scm.org) and rerun this script.\e[0m"
+	exit
+fi
+repo init -u git://github.com/TeamHackDroid/google_droid_manifest
+repo sync
+export USE_CCACHE=1
+. build/envsetup.sh
+make otapackage
+
+echo -e "\e[0;31;46mEverything went fine. Thanks for using this script.\e[0m"
+sleep 5
+clear
+exit
